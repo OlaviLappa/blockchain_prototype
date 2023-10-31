@@ -18,7 +18,7 @@ namespace blockchain_prototype
 
         public List<Block> GetChain()
         {
-            string rootDirectory = @"C:\Users\olavi\uniblock\blockchain_prototype\Blockchain_prototype\blockchain_prototype\blockchain_prototype\bin\Debug\net6.0\Transactions";
+            string rootDirectory = @"C:\Users\olavi\uniblock\Blockchain_prototype\blockchain_prototype\bin\Debug\net6.0\Transactions";
 
             List<Block> allObjects = new List<Block>();
 
@@ -35,7 +35,7 @@ namespace blockchain_prototype
 
         private string CreateNewFile(int id)
         {
-            string pathName = @$"C:\Users\olavi\uniblock\blockchain_prototype\Blockchain_prototype\blockchain_prototype\blockchain_prototype\bin\Debug\net6.0\Transactions\{id}.json";
+            string pathName = @$"C:\Users\olavi\uniblock\Blockchain_prototype\blockchain_prototype\bin\Debug\net6.0\Transactions\{id}.json";
 
             using (FileStream fs = File.Create(pathName))
             {
