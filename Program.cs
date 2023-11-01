@@ -1,5 +1,6 @@
 ﻿using blockchain_prototype;
 using blockchain_prototype.Entities;
+using blockchain_prototype.Network;
 using blockchain_prototype.Transaction;
 
 namespace BlockchainConsoleApp
@@ -8,6 +9,10 @@ namespace BlockchainConsoleApp
     {
         public static async Task Main(string[] args)
         {
+            NetworkSender sender = new NetworkSender();
+            sender.Test();
+            Console.ReadLine();
+            return;
             try
             {
                 Blockchain blockchain = new Blockchain();
