@@ -9,10 +9,6 @@ namespace BlockchainConsoleApp
     {
         public static async Task Main(string[] args)
         {
-            NetworkSender sender = new NetworkSender();
-            sender.Test();
-            Console.ReadLine();
-            return;
             try
             {
                 Blockchain blockchain = new Blockchain();
