@@ -1,5 +1,6 @@
 ﻿using blockchain_prototype;
 using blockchain_prototype.Entities;
+using blockchain_prototype.Network;
 using blockchain_prototype.Transaction;
 
 namespace BlockchainConsoleApp
