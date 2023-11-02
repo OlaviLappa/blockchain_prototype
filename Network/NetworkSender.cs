@@ -24,7 +24,7 @@ namespace blockchain_prototype.Network
             Console.ReadLine();
         }
 
-        static void OpenPort(int port)
+        private static void OpenPort(int port)
         {
             TcpListener listener = new TcpListener(IPAddress.Any, port);
             listener.Start();
@@ -45,7 +45,7 @@ namespace blockchain_prototype.Network
             });
         }
 
-        static void HandleClient(TcpClient client)
+        private static void HandleClient(TcpClient client)
         {
             if (client == null)
             {
@@ -62,7 +62,7 @@ namespace blockchain_prototype.Network
             Console.WriteLine($"Получено: {message}");
         }
 
-        static void SendData(string ipAddress, int port, string data)
+        private static void SendData(string ipAddress, int port, string data)
         {
             using (TcpClient client = new TcpClient(ipAddress, port))
             {
@@ -75,7 +75,7 @@ namespace blockchain_prototype.Network
             }
         }
 
-        static void SendPacket(string ipAddress, int port, Packet packet)
+        private static void SendPacket(string ipAddress, int port, Packet packet)
         {
             using (TcpClient client = new TcpClient(ipAddress, port))
             {
@@ -88,7 +88,7 @@ namespace blockchain_prototype.Network
             }
         }
 
-        static byte[] Serialize(object obj)
+        private static byte[] Serialize(object obj)
         {
             BinaryFormatter formatter = new BinaryFormatter();
             using (MemoryStream memoryStream = new MemoryStream())
@@ -98,7 +98,7 @@ namespace blockchain_prototype.Network
             }
         }
 
-        static Packet Deserialize(byte[] data)
+        private static Packet Deserialize(byte[] data)
         {
             BinaryFormatter formatter = new BinaryFormatter();
             using (MemoryStream memoryStream = new MemoryStream(data))
