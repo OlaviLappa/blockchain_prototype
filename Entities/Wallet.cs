@@ -46,6 +46,19 @@ namespace blockchain_prototype.Entities
 
             Address = GenerateAddress(publicKey);
             _balance = 0;
+
+            BalanceHandler balanceHandler = new BalanceHandler();
+            decimal value = balanceHandler.GetCurrentBalance(this);
+
+            if (value > 0)
+            {
+                _balance = value;
+            }
+
+            else
+            {
+                _balance = 0;
+            }
         }
 
         public string GenerateAddress(byte[] publicKey)
